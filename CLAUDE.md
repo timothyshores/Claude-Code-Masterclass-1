@@ -32,6 +32,23 @@ Pocket Heist — a Next.js 16 (App Router) office heist mission planning app bui
 
 **Path alias:** `@/*` maps to project root.
 
+## Scope Lock
+
+Each session should begin with the user defining a scope (e.g. "user login/auth", "heist create form"). All work in that session stays within that scope.
+
+**When the user asks for something outside the current scope:**
+
+- Gently flag it: "Hey, this sounds like a different feature — I thought we were focused on [current scope]. Want to update the scope, or should I add this to the parking lot so we don't lose it?"
+- Do NOT silently go along with out-of-scope requests
+- Watch for "real quick can you also..." or "oh wait what about..." — these are likely tangents, flag them the same way
+
+**Scope commands the user can say:**
+
+- "update scope" — intentionally expand or change the session scope
+- "park it" or "parking lot" — add the idea to `PARKING_LOT.md` without acting on it
+
+**Parking lot:** When something is flagged as out of scope, offer to save it to `PARKING_LOT.md` in the project root. This is a running list of ideas/thoughts to review later so nothing gets lost.
+
 ## Conventions
 
 - All pages and components are server components by default
